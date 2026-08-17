@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday, Mom ♡</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+    background: #edf5ed;
+    color: #365343;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.page {
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* =========================
+   PAGE 1
+========================= */
+
+#page1 {
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at 15% 20%, #ffffff 0 4%, transparent 5%),
+        radial-gradient(circle at 85% 15%, #d7ead7 0 7%, transparent 8%),
+        linear-gradient(135deg, #f3f8f1, #dcebdc);
+}
+
+/* floating decorations */
+
+.leaf {
+    position: absolute;
+    font-size: 32px;
+    opacity: 0.7;
+    animation: float 5s ease-in-out infinite;
+}
+
+.leaf1 {
+    top: 8%;
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.leaf2 {
+    top: 18%;
+    right: 9%;
+    animation-delay: 1s;
+}
+
+.leaf3 {
+    bottom: 12%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.leaf4 {
+    bottom: 10%;
+    right: 8%;
+    animation-delay: 1.5s;
+}
+
+.flower {
+    position: absolute;
+    font-size: 25px;
+    animation: spinFloat 6s ease-in-out infinite;
+}
+
+.flower1 {
+    top: 30%;
+    left: 12%;
+}
+
+.flower2 {
+    top: 35%;
+    right: 12%;
+    animation-delay: 1s;
+}
+
+.flower3 {
+    bottom: 25%;
+    right: 18%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(8deg);
+    }
+}
+
+@keyframes spinFloat {
+    0%,100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(10deg);
+    }
+}
+
+/* main card */
+
+.welcome {
+    width: min(90%, 430px);
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.small-text {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #78977d;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+    color: #416b4e;
+    font-size: clamp(38px, 10vw, 60px);
+    line-height: 1.05;
+    margin-bottom: 22px;
+}
+
+.subtitle {
+    color: #718d76;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* image */
+
+.main-photo {
+    width: 220px;
+    height: 270px;
+    object-fit: cover;
+    padding: 8px;
+    background: white;
+    box-shadow: 0 15px 35px rgba(59, 91, 66, 0.15);
+    transform: rotate(-3deg);
+    margin: 0 auto 30px;
+    border-radius: 3px;
+    animation: photoFloat 4s ease-in-out infinite;
+}
+
+@keyframes photoFloat {
+    0%,100% {
+        transform: rotate(-3deg) translateY(0);
+    }
+    50% {
+        transform: rotate(2deg) translateY(-8px);
+    }
+}
+
+/* button */
+
+.next-btn {
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    background: #668b6d;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(70, 105, 78, 0.2);
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    transform: translateY(-3px);
+    background: #55785d;
+    box-shadow: 0 12px 25px rgba(70, 105, 78, 0.28);
+}
+
+/* =========================
+   PAGE 2
+========================= */
+
+#page2 {
+    min-height: 100vh;
+    display: none;
+    background:
+        radial-gradient(circle at 10% 10%, #e1f0df 0 8%, transparent 9%),
+        radial-gradient(circle at 90% 90%, #d4e7d3 0 10%, transparent 11%),
+        #f5f8f1;
+    padding: 45px 20px 60px;
+}
+
+#page2.active {
+    display: block;
+}
+
+.page2-content {
+    width: min(100%, 950px);
+    margin: auto;
+    text-align: center;
+}
+
+/* title */
+
+.page2-title {
+    font-family: "Playfair Display", serif;
+    color: #416b4e;
+    font-size: clamp(32px, 7vw, 48px);
+    margin-bottom: 30px;
+    animation: fadeUp 1s ease;
+}
+
+.page2-title span {
+    color: #91aF91;
+}
+
+/* =========================
+   WISH CARD
+========================= */
+
+.wish-card {
+    width: min(100%, 600px);
+    margin: 0 auto 45px;
+    background: #e3efe0;
+    border: 1px solid #cadfc8;
+    border-radius: 25px;
+    padding: 35px 30px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(70, 100, 70, 0.1);
+    animation: cardAppear 1s ease;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.wish-card::before {
+    content: "🌿";
+    position: absolute;
+    top: -18px;
+    left: 25px;
+    font-size: 35px;
+}
+
+.wish-card::after {
+    content: "🌷";
+    position: absolute;
+    bottom: -15px;
+    right: 25px;
+    font-size: 30px;
+}
+
+.card-title {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    color: #4d7455;
+    margin-bottom: 20px;
+}
+
+.wish-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #58705d;
+}
+
+.signature {
+    margin-top: 25px;
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    color: #557b5c;
+}
+
+/* =========================
+   POLAROIDS
+========================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: min(100%, 900px);
+    margin: auto;
+}
+
+.polaroid {
+    background: white;
+    padding: 10px 10px 22px;
+    box-shadow: 0 12px 25px rgba(65, 90, 65, 0.14);
+    border-radius: 2px;
+    transition: 0.35s ease;
+    animation: polaroidIn 1s ease both;
+}
+
+.polaroid:nth-child(1) {
+    transform: rotate(-5deg);
+    animation-delay: .2s;
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(4deg);
+    animation-delay: .4s;
+}
+
+.polaroid:nth-child(3) {
+    transform: rotate(-3deg);
+    animation-delay: .6s;
+}
+
+.polaroid:nth-child(4) {
+    transform: rotate(5deg);
+    animation-delay: .8s;
+}
+
+@keyframes polaroidIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px) rotate(0deg);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) translateY(-10px) scale(1.04);
+    z-index: 5;
+}
+
+.polaroid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.polaroid-caption {
+    margin-top: 10px;
+    color: #718571;
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #668b6d;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(50, 80, 55, 0.25);
+    z-index: 20;
+}
+
+.music-btn.playing {
+    animation: musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse {
+    0%,100% {
+        box-shadow: 0 0 0 0 rgba(102,139,109,.4);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(102,139,109,0);
+    }
+}
+
+/* =========================
+   PETALS
+========================= */
+
+.petal {
+    position: fixed;
+    top: -30px;
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 30;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        padding: 0 10px;
+    }
+
+    .wish-card {
+        padding: 30px 22px;
+    }
+
+    .main-photo {
+        width: 190px;
+        height: 235px;
+    }
+
+    .leaf {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .gallery {
+        gap: 15px;
+    }
+
+    .polaroid {
+        padding: 7px 7px 16px;
+    }
+
+    .polaroid-caption {
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ======================================
+     PAGE 1
+====================================== -->
+
+<section class="page active" id="page1">
+
+    <!-- decorations -->
+    <div class="leaf leaf1">🌿</div>
+    <div class="leaf leaf2">🍃</div>
+    <div class="leaf leaf3">🌱</div>
+    <div class="leaf leaf4">🌿</div>
+
+    <div class="flower flower1">🌼</div>
+    <div class="flower flower2">🌷</div>
+    <div class="flower flower3">🌸</div>
+
+    <div class="welcome">
+
+        <div class="small-text">
+            A little surprise for you ♡
+        </div>
+
+        <h1>
+            Happy Birthday,<br>
+            The Best Mom Ever
+        </h1>
+
+        <p class="subtitle">
+            Today is all about celebrating you. 🌿
+        </p>
+
+        <!-- CHANGE THIS IMAGE -->
+        <img
+            src="images/mom.jpeg"
+            alt="A beautiful memory"
+            class="main-photo"
+        >
+
+        <br>
+
+        <button class="next-btn" onclick="openWish()">
+            Open Your Surprise ♡
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================
+     PAGE 2
+====================================== -->
+
+<section class="page" id="page2">
+
+    <div class="page2-content">
+
+        <h2 class="page2-title">
+            A Little Birthday Wish <span>♡</span>
+        </h2>
+
+        <!-- WISH CARD -->
+
+        <div class="wish-card">
+
+            <div class="card-title">
+                Dear Mom 🌷
+            </div>
+
+            <div class="wish-text">
+
+                Happy Birthday to the most wonderful mom. ♡
+                <br><br>
+
+                Thank you for all the love, care and sacrifices
+                you've given throughout the years. Thank you for
+                always being there, even during the moments when
+                I don't say it enough.
+                <br><br>
+
+                I hope this new year of your life brings you
+                endless happiness, good health, beautiful moments
+                and everything your heart wishes for.
+                <br><br>
+
+                You deserve all the love and happiness in the world.
+                <br><br>
+
+                Happy Birthday, Mama. I love you always. 🌿
+
+            </div>
+
+            <div class="signature">
+                With all my love,<br>
+                <strong>[AYOI YANG IMUT]</strong>
+            </div>
+
+        </div>
+
+
+        <!-- 4 PHOTOS -->
+
+        <div class="gallery">
+
+            <div class="polaroid">
+                <img src="images/photo1.jpeg" alt="Memory 1">
+                <div class="polaroid-caption">
+                    A precious memory ♡
+                </div>
+            </div>
+
+            <div class="polaroid">
+                <img src="images/photo2.jpeg" alt="Memory 2">
+                <div class="polaroid-caption">
+                    Always together 🌿
+                </div>
+            </div>
+
+            <div class="polaroid">
+                <img src="images/photo3.jpeg" alt="Memory 3">
+                <div class="polaroid-caption">
+                    One of many memories
+                </div>
+            </div>
+
+            <div class="polaroid">
+                <img src="images/photo4.jpeg" alt="Memory 4">
+                <div class="polaroid-caption">
+                    Forever grateful ♡
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MUSIC -->
+
+    <audio id="birthdayMusic" loop>
+        <source src="music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-btn" id="musicButton" onclick="toggleMusic()">
+        ♫
+    </button>
+
+</section>
+
+
+<script>
+
+/* =========================
+   CHANGE PAGE
+========================= */
+
+function openWish() {
+
+    document.getElementById("page1").classList.remove("active");
+
+    document.getElementById("page2").classList.add("active");
+
+    // Try to start music
+    const music = document.getElementById("birthdayMusic");
+
+    music.play().then(() => {
+
+        document
+            .getElementById("musicButton")
+            .classList.add("playing");
+
+    }).catch(() => {
+
+        // Browser may block autoplay.
+        // User can press the music button.
+        console.log("Music autoplay blocked.");
+
+    });
+
+    // Start falling petals
+    startPetals();
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+function toggleMusic() {
+
+    const music = document.getElementById("birthdayMusic");
+    const button = document.getElementById("musicButton");
+
+    if (music.paused) {
+
+        music.play();
+
+        button.classList.add("playing");
+
+    } else {
+
+        music.pause();
+
+        button.classList.remove("playing");
+
+    }
+}
+
+
+/* =========================
+   FALLING PETALS
+========================= */
+
+function createPetal() {
+
+    const petal = document.createElement("div");
+
+    petal.classList.add("petal");
+
+    const flowers = ["🌿", "🍃", "🌸", "🌷", "✿"];
+
+    petal.innerHTML =
+        flowers[Math.floor(Math.random() * flowers.length)];
+
+    petal.style.left =
+        Math.random() * 100 + "vw";
+
+    petal.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    petal.style.opacity =
+        0.4 + Math.random() * 0.5;
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 10000);
+}
+
+
+function startPetals() {
+
+    setInterval(createPetal, 700);
+
+}
+
+
+/* =========================
+   CLICK EFFECT
+========================= */
+
+document.addEventListener("click", function(e) {
+
+    if (e.target.closest("button")) return;
+
+    const heart = document.createElement("div");
+
+    heart.innerHTML = "♡";
+
+    heart.style.position = "fixed";
+    heart.style.left = e.clientX + "px";
+    heart.style.top = e.clientY + "px";
+    heart.style.color = "#7da183";
+    heart.style.fontSize = "20px";
+    heart.style.pointerEvents = "none";
+    heart.style.zIndex = "100";
+
+    document.body.appendChild(heart);
+
+    heart.animate(
+        [
+            {
+                transform: "translateY(0) scale(1)",
+                opacity: 1
+            },
+            {
+                transform: "translateY(-50px) scale(1.5)",
+                opacity: 0
+            }
+        ],
+        {
+            duration: 700,
+            easing: "ease-out"
+        }
+    );
+
+    setTimeout(() => heart.remove(), 700);
+
+});
+
+</script>
+
+</body>
+</html>
